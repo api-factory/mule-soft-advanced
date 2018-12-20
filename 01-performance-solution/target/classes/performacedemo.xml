@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:cluster="http://www.mulesoft.org/schema/mule/ee/cluster" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <queued-asynchronous-processing-strategy name="Queued_Asynchronous_Processing_Strategy" maxThreads="100" minThreads="50" threadTTL="5000" threadWaitTimeout="5000" maxBufferSize="200" queueTimeout="1000" maxQueueSize="150" doc:name="Queued Asynchronous Processing Strategy">
+        <file-queue-store/>
+    </queued-asynchronous-processing-strategy>
+    
+    
+    <configuration doc:name="Configuration">
+        <http:config useTransportForUris="false"/>
+        
+     
+    </configuration>
+
+    
+    <flow name="09-performance-tuning-solutionFlow1" processingStrategy="Queued_Asynchronous_Processing_Strategy">
+        <vm:inbound-endpoint exchange-pattern="one-way" path="bidsvmq" doc:name="VM" >
+        	
+        </vm:inbound-endpoint>
+        <component class="com.mulesoft.EnricherAuctionComponent" doc:name="Enricher"/>
+        <collection-aggregator failOnTimeout="true" doc:name="Collection Aggregator"/>
+        <component class="com.mulesoft.HighestBidderAuctionComponent" doc:name="Java"/>
+    </flow>
+    <flow name="09-performance-tuning-solutionFlow">
+        <file:inbound-endpoint path="C:\input" pollingFrequency="5000" responseTimeout="10000" doc:name="File"/>
+        <file:file-to-string-transformer doc:name="File to String"/>
+        <splitter expression="#[groovy:payload.readLines()]" doc:name="Splitter"/>
+        <vm:outbound-endpoint exchange-pattern="one-way" path="bidsvmq" doc:name="VM"/>
+    </flow>
+</mule>
