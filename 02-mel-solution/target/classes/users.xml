@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user>
+    <name>John</name>
+    <lastName>Doe</lastName>
+    <addresses>
+      <address>
+        <street>987 Cypress Avenue</street>
+        <zipCode>222</zipCode>
+      </address>
+      <address>
+        <street>123 Main Street</street>
+        <zipCode>111</zipCode>
+      </address>
+    </addresses>
+  </user>
+  <user>
+    <name>Jane</name>
+    <lastName>Doe</lastName>
+    <addresses>
+      <address>
+        <street>654 Sunset Boulevard</street>
+        <zipCode>333</zipCode>
+      </address>
+      <address>
+        <street>345 Main Street</street>
+        <zipCode>444</zipCode>
+      </address>
+    </addresses>
+  </user>
+</users>

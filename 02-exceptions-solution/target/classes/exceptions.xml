@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+    <jms:activemq-connector name="Active_MQ" brokerURL="tcp://localhost:61616" validateConnections="true" maxRedelivery="3" doc:name="Active MQ"/>
+    <flow name="exceptionsFlow">
+        <jms:inbound-endpoint exchange-pattern="request-response" queue="inq" connector-ref="Active_MQ" doc:name="JMS">
+            <jms:transaction action="ALWAYS_BEGIN"/>
+        </jms:inbound-endpoint>
+        <append-string-transformer message="Response" doc:name="Append String"/>
+        <jms:outbound-endpoint queue="outq" connector-ref="Active_MQ" doc:name="JMS">
+            <jms:transaction action="ALWAYS_JOIN"/>
+        </jms:outbound-endpoint>
+        <component class="com.way2learnonline.TestService" doc:name="Java"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+        <rollback-exception-strategy doc:name="Rollback Exception Strategy">
+            <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+            <on-redelivery-attempts-exceeded>
+                <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+            </on-redelivery-attempts-exceeded>
+        </rollback-exception-strategy>
+    </flow>
+</mule>
