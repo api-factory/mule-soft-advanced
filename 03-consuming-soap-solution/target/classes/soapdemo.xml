@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:ws="http://www.mulesoft.org/schema/mule/ws" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" basePath="/soap" doc:name="HTTP Listener Configuration"/>
+    <ws:consumer-config name="Web_Service_Consumer" service="ProductServicePortService" port="ProductServicePortSoap11" serviceAddress="http://localhost:6060/soap/ws" wsdlLocation="http://localhost:6060/soap/ws/products.wsdl" doc:name="Web Service Consumer"/>
+    <flow name="getallproducts">
+        <ws:consumer config-ref="Web_Service_Consumer" operation="getAllProducts" doc:name="Web Service Consumer"/>
+    </flow>
+    <flow name="getproductsbyname">
+        <parse-template location="getproductsbyname.xml" doc:name="Parse Template"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+        <ws:consumer config-ref="Web_Service_Consumer" operation="getProductsByName" doc:name="Web Service Consumer"/>
+    </flow>
+    <flow name="addproduct">
+        <ws:consumer config-ref="Web_Service_Consumer" operation="addProduct" doc:name="Web Service Consumer"/>
+    </flow>
+    <flow name="03-consuming-soap-solutionFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/products" doc:name="HTTP"/>
+        <choice doc:name="Choice">
+        	<when expression="message.inboundProperties.'http.method'==POST">
+                <flow-ref name="addproduct" doc:name="addproduct"/>
+            </when>
+            <when expression="message.inboundProperties.'http.query.params'.productname == empty">
+                <flow-ref name="getallproducts" doc:name="getallproducts"/>
+            </when>
+            <when expression="message.inboundProperties.'http.query.params'.productname!=empty">
+                <flow-ref name="getproductsbyname" doc:name="getproductsbyname"/>
+            </when>
+            
+            <otherwise>
+                <set-payload value="Invalid request!!!" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+</mule>

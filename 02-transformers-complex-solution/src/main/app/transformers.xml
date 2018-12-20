@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
+    <flow name="getConversionRateFlow">
+        <choice doc:name="Choice">
+            <when expression="payload.equals('us')">
+                <set-payload value="#[new Integer(65)]" doc:name="USD"/>
+            </when>
+            <when expression="payload.equals('uk')">
+                <set-payload value="#[new Integer(75)]" doc:name="EURO"/>
+            </when>
+            <otherwise>
+                <set-payload value="#[new Integer(1)]" doc:name="Rupee"/>
+            </otherwise>
+        </choice>
+    </flow>
+    <flow name="transformersFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/transformjson" doc:name="HTTP"/>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:input-payload doc:sample="sample_data\json.json"/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%var conversionRate= 65
+//%function getConvertedOriginalPrice(price) price*conversionRate
+%var getConvertedOriginalPrice= (price)-> price*conversionRate
+%var getImages = (images) -> {
+								(
+									images  map {
+										img : $
+									}
+								)
+							 } 
+%output application/xml 
+---
+products: {
+	(
+		( (payload map (product,indexOfProduct)-> 
+			{
+			product : {
+				productId:product.productId,
+				name:product.name,
+				brandName:product.brandName,
+				originalPrice: getConvertedOriginalPrice(product.originalPrice),
+				(images : getImages(product.images) ) when product.images?
+						
+					
+					
+			}
+		} orderBy $.product.originalPrice
+		) filter $.product.brandName=='Apple')[-1..0]
+	)
+}]]></dw:set-payload>
+        </dw:transform-message>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>
