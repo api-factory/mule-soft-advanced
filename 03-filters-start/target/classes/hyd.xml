@@ -1,0 +1,14 @@
+<shiporder>
+	<orderperson>Siva</orderperson>
+	<shipto>
+		<name>xyz</name>
+		<city>hyderabad</city>
+	</shipto>
+	
+	<item>
+		<title>Laptop</title>
+		<quantity>2</quantity>
+		<price>20000</price>
+	</item>
+</shiporder>
+

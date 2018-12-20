@@ -1,0 +1,53 @@
+#%RAML 0.8
+title: Products Rest Service
+baseUri: http://localhost:7070/rest
+
+/products:
+  get: 
+    queryParameters: 
+      page:      
+        required: false
+        default: 0
+        example: 1
+        type: number
+      size:
+        required: false
+        default: 20
+        example: 10
+        type: number
+          
+    responses: 
+      200: 
+        body: 
+          application/json: 
+            example: !include allproducts.json
+  post: 
+    description:  Create a new Product    
+    body: 
+      application/json: 
+        example:  !include addproduct.json
+    responses: 
+      201: 
+        body:  
+          application/json: 
+            example:  !include productadded.json
+        
+  /{productnamecontains}:  
+    get: 
+      queryParameters: 
+        page:      
+          required: false
+          default: 0
+          example: 1
+          type: number
+        size:
+          required: false
+          default: 20
+          example: 10
+          type: number
+          
+      responses: 
+        200: 
+          body: 
+            application/json: 
+              example: !include allproducts.json

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+    <munit:config name="munit" doc:name="MUnit configuration"/>
+    <spring:beans>
+        <spring:import resource="classpath:payloadtypefilterdemo.xml"/>
+    </spring:beans>
+    <munit:test name="payloadtypefilterdemo-test-suite-payloadtypefilterdemoTest" description="Test">
+        <munit:set payload="#[]" doc:name="Set Message">
+            <munit:inbound-properties>
+                <munit:inbound-property key="http.query.params" value="#[['stock':'mule']]"/>
+            </munit:inbound-properties>
+        </munit:set>
+        <flow-ref name="payloadtypefilterdemo" doc:name="Flow-ref to payloadtypefilterdemo"/>
+        <munit:assert-payload-equals expectedValue="100USD" doc:name="Assert Payload"/>
+    </munit:test>
+    <munit:test name="payloadtypefilterdemo-test-suite-payloadtypefilterdemoTest1" description="Test">
+        <munit:set payload="#['test']" doc:name="Set Message"/>
+        <flow-ref name="payloadtypefilterdemo" doc:name="Flow-ref to payloadtypefilterdemo"/>
+        <munit:assert-null doc:name="Assert Null Payload"/>
+    </munit:test>
+</mule>

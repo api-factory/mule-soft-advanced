@@ -1,0 +1,1362 @@
+<metadata__catalog__entry>
+  <version>5.2.0.0</version>
+  <types class="tree-map">
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>getAllProductsRequest</id>
+        <displayName>getAllProductsRequest</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey">
+                <id>getAllProductsRequest</id>
+                <displayName>getAllProductsRequest</displayName>
+                <category>DEFAULT</category>
+                <metaDataKeyPropertiesManager>
+                  <properties>
+                    <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+                  </properties>
+                </metaDataKeyPropertiesManager>
+              </metaDataKey>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields/>
+        <rootElement>
+          <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+          <localPart>getAllProductsRequest</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas>
+            <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:sch=&quot;http//way2learnonline.com/domain&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:tns=&quot;http//way2learnonline.com/domain&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http//way2learnonline.com/domain&quot; version=&quot;1.0&quot;&gt;&#xd;
+&#xd;
+&#xd;
+ &#xd;
+ &lt;xs:element name=&quot;getAllProductsRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence/&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getAllProductsResponse&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;products&quot;&gt;&#xd;
+        		 	 &lt;xs:complexType&gt;&#xd;
+				  		&lt;xs:sequence&gt;&#xd;
+				  			&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+				  		&lt;/xs:sequence&gt;&#xd;
+				  &lt;/xs:complexType&gt;&#xd;
+        		 &lt;/xs:element&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence&gt;&#xd;
+            	&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+            &lt;/xs:sequence&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;products&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductRequest&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+&#xd;
+&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;offer&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element name=&quot;offerPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offerValidUntil&quot; type=&quot;xs:date&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;product&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;brandName&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;description&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+     &lt;xs:element name=&quot;images&quot;&gt;&#xd;
+        		&lt;xs:complexType&gt;&#xd;
+					&lt;xs:sequence&gt;&#xd;
+						&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;image&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+					&lt;/xs:sequence&gt;&#xd;
+				 &lt;/xs:complexType&gt;&#xd;
+         &lt;/xs:element&gt;&#xd;
+  &#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offer&quot; type=&quot;tns:offer&quot;/&gt;&#xd;
+      &lt;xs:element name=&quot;originalPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;productId&quot; type=&quot;xs:long&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+  &#xd;
+  		 &#xd;
+ &#xd;
+&lt;/xs:schema&gt;</string>
+          </schemas>
+          <encoding>windows-1252</encoding>
+          <baseUri>http://localhost:6060/soap/ws/products.wsdl</baseUri>
+        </schemas>
+        <namespaceManager>
+          <namespacePrefix>
+            <entry>
+              <string>http//way2learnonline.com/domain</string>
+              <string>ns0</string>
+            </entry>
+          </namespacePrefix>
+        </namespaceManager>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>getAllProductsResponse</id>
+        <displayName>getAllProductsResponse</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey">
+                <id>getAllProductsResponse</id>
+                <displayName>getAllProductsResponse</displayName>
+                <category>DEFAULT</category>
+                <metaDataKeyPropertiesManager>
+                  <properties>
+                    <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+                  </properties>
+                </metaDataKeyPropertiesManager>
+              </metaDataKey>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>products</name>
+            <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+              <dataType>XML</dataType>
+              <metaDataModelPropertiesManager>
+                <properties/>
+              </metaDataModelPropertiesManager>
+              <fields>
+                <org.mule.common.metadata.DefaultMetaDataField>
+                  <name>product</name>
+                  <model class="org.mule.common.metadata.DefaultListMetaDataModel">
+                    <dataType>LIST</dataType>
+                    <metaDataModelPropertiesManager>
+                      <properties>
+                        <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                          <typeQName>
+                            <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                            <localPart>product</localPart>
+                            <prefix></prefix>
+                          </typeQName>
+                        </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        <org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                          <maxOccurs>2147483647</maxOccurs>
+                          <minOccurs>1</minOccurs>
+                        </org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                      </properties>
+                    </metaDataModelPropertiesManager>
+                    <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                      <dataType>XML</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties/>
+                      </metaDataModelPropertiesManager>
+                      <fields>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>brandName</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>STRING</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName>
+                                    <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                                    <localPart>string</localPart>
+                                    <prefix></prefix>
+                                  </typeQName>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>brandName</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>description</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>STRING</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>description</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>images</name>
+                          <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                            <dataType>XML</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties/>
+                            </metaDataModelPropertiesManager>
+                            <fields>
+                              <org.mule.common.metadata.DefaultMetaDataField>
+                                <name>image</name>
+                                <model class="org.mule.common.metadata.DefaultListMetaDataModel">
+                                  <dataType>LIST</dataType>
+                                  <metaDataModelPropertiesManager>
+                                    <properties>
+                                      <org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                                        <maxOccurs>2147483647</maxOccurs>
+                                        <minOccurs>0</minOccurs>
+                                      </org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                                      <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                        <typeQName reference="../../../../../../../../../org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                      </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                    </properties>
+                                  </metaDataModelPropertiesManager>
+                                  <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                                    <dataType>STRING</dataType>
+                                    <metaDataModelPropertiesManager>
+                                      <properties/>
+                                    </metaDataModelPropertiesManager>
+                                  </model>
+                                  <isArray>false</isArray>
+                                </model>
+                                <accessType>READ_WRITE</accessType>
+                                <metaDataFieldPropertyManager>
+                                  <properties>
+                                    <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                      <name>
+                                        <namespaceURI></namespaceURI>
+                                        <localPart>image</localPart>
+                                        <prefix></prefix>
+                                      </name>
+                                    </org.mule.common.metadata.property.QNameMetaDataProperty>
+                                  </properties>
+                                </metaDataFieldPropertyManager>
+                              </org.mule.common.metadata.DefaultMetaDataField>
+                            </fields>
+                            <rootElement>
+                              <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                              <localPart>getAllProductsResponse</localPart>
+                              <prefix>ns0</prefix>
+                            </rootElement>
+                            <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+                              <schemas>
+                                <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:sch=&quot;http//way2learnonline.com/domain&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:tns=&quot;http//way2learnonline.com/domain&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http//way2learnonline.com/domain&quot; version=&quot;1.0&quot;&gt;&#xd;
+&#xd;
+&#xd;
+ &#xd;
+ &lt;xs:element name=&quot;getAllProductsRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence/&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getAllProductsResponse&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;products&quot;&gt;&#xd;
+        		 	 &lt;xs:complexType&gt;&#xd;
+				  		&lt;xs:sequence&gt;&#xd;
+				  			&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+				  		&lt;/xs:sequence&gt;&#xd;
+				  &lt;/xs:complexType&gt;&#xd;
+        		 &lt;/xs:element&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence&gt;&#xd;
+            	&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+            &lt;/xs:sequence&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;products&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductRequest&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+&#xd;
+&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;offer&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element name=&quot;offerPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offerValidUntil&quot; type=&quot;xs:date&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;product&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;brandName&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;description&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+     &lt;xs:element name=&quot;images&quot;&gt;&#xd;
+        		&lt;xs:complexType&gt;&#xd;
+					&lt;xs:sequence&gt;&#xd;
+						&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;image&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+					&lt;/xs:sequence&gt;&#xd;
+				 &lt;/xs:complexType&gt;&#xd;
+         &lt;/xs:element&gt;&#xd;
+  &#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offer&quot; type=&quot;tns:offer&quot;/&gt;&#xd;
+      &lt;xs:element name=&quot;originalPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;productId&quot; type=&quot;xs:long&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+  &#xd;
+  		 &#xd;
+ &#xd;
+&lt;/xs:schema&gt;</string>
+                              </schemas>
+                              <encoding reference="../../../../../../../../../../../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+                              <baseUri>http://localhost:6060/soap/ws/products.wsdl</baseUri>
+                            </schemas>
+                            <namespaceManager>
+                              <namespacePrefix>
+                                <entry>
+                                  <string>http//way2learnonline.com/domain</string>
+                                  <string>ns0</string>
+                                </entry>
+                              </namespacePrefix>
+                            </namespaceManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>images</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>name</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>STRING</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>name</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>offer</name>
+                          <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                            <dataType>XML</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName>
+                                    <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                                    <localPart>offer</localPart>
+                                    <prefix></prefix>
+                                  </typeQName>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                            <fields>
+                              <org.mule.common.metadata.DefaultMetaDataField>
+                                <name>offerPrice</name>
+                                <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                                  <dataType>DOUBLE</dataType>
+                                  <metaDataModelPropertiesManager>
+                                    <properties>
+                                      <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                        <typeQName>
+                                          <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                                          <localPart>double</localPart>
+                                          <prefix></prefix>
+                                        </typeQName>
+                                      </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                    </properties>
+                                  </metaDataModelPropertiesManager>
+                                </model>
+                                <accessType>READ_WRITE</accessType>
+                                <metaDataFieldPropertyManager>
+                                  <properties>
+                                    <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                      <name>
+                                        <namespaceURI></namespaceURI>
+                                        <localPart>offerPrice</localPart>
+                                        <prefix></prefix>
+                                      </name>
+                                    </org.mule.common.metadata.property.QNameMetaDataProperty>
+                                  </properties>
+                                </metaDataFieldPropertyManager>
+                              </org.mule.common.metadata.DefaultMetaDataField>
+                              <org.mule.common.metadata.DefaultMetaDataField>
+                                <name>offerValidUntil</name>
+                                <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                                  <dataType>DATE</dataType>
+                                  <metaDataModelPropertiesManager>
+                                    <properties>
+                                      <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                        <typeQName>
+                                          <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                                          <localPart>date</localPart>
+                                          <prefix></prefix>
+                                        </typeQName>
+                                      </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                    </properties>
+                                  </metaDataModelPropertiesManager>
+                                </model>
+                                <accessType>READ_WRITE</accessType>
+                                <metaDataFieldPropertyManager>
+                                  <properties>
+                                    <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                      <name>
+                                        <namespaceURI></namespaceURI>
+                                        <localPart>offerValidUntil</localPart>
+                                        <prefix></prefix>
+                                      </name>
+                                    </org.mule.common.metadata.property.QNameMetaDataProperty>
+                                  </properties>
+                                </metaDataFieldPropertyManager>
+                              </org.mule.common.metadata.DefaultMetaDataField>
+                            </fields>
+                            <rootElement>
+                              <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                              <localPart>getAllProductsResponse</localPart>
+                              <prefix>ns0</prefix>
+                            </rootElement>
+                            <schemas class="org.mule.common.metadata.StringBasedSchemaProvider" reference="../../../org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas"/>
+                            <namespaceManager reference="../../../org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>offer</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>originalPrice</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>DOUBLE</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../org.mule.common.metadata.DefaultMetaDataField[5]/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>originalPrice</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>productId</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>LONG</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName>
+                                    <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                                    <localPart>long</localPart>
+                                    <prefix></prefix>
+                                  </typeQName>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>productId</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                      </fields>
+                      <rootElement>
+                        <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                        <localPart>getAllProductsResponse</localPart>
+                        <prefix>ns0</prefix>
+                      </rootElement>
+                      <schemas class="org.mule.common.metadata.StringBasedSchemaProvider" reference="../fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas"/>
+                      <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+                    </model>
+                    <isArray>false</isArray>
+                  </model>
+                  <accessType>READ_WRITE</accessType>
+                  <metaDataFieldPropertyManager>
+                    <properties>
+                      <org.mule.common.metadata.property.QNameMetaDataProperty>
+                        <name>
+                          <namespaceURI></namespaceURI>
+                          <localPart>product</localPart>
+                          <prefix></prefix>
+                        </name>
+                      </org.mule.common.metadata.property.QNameMetaDataProperty>
+                    </properties>
+                  </metaDataFieldPropertyManager>
+                </org.mule.common.metadata.DefaultMetaDataField>
+              </fields>
+              <rootElement>
+                <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                <localPart>getAllProductsResponse</localPart>
+                <prefix>ns0</prefix>
+              </rootElement>
+              <schemas class="org.mule.common.metadata.StringBasedSchemaProvider" reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas"/>
+              <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>products</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+          <localPart>getAllProductsResponse</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas reference="../../fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas/schemas"/>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+          <baseUri>http://localhost:6060/soap/ws/products.wsdl</baseUri>
+        </schemas>
+        <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>getProductsByNameRequest</id>
+        <displayName>getProductsByNameRequest</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey">
+                <id>getProductsByNameRequest</id>
+                <displayName>getProductsByNameRequest</displayName>
+                <category>DEFAULT</category>
+                <metaDataKeyPropertiesManager>
+                  <properties>
+                    <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+                  </properties>
+                </metaDataKeyPropertiesManager>
+              </metaDataKey>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>name</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>name</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+          <localPart>getProductsByNameRequest</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas>
+            <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:sch=&quot;http//way2learnonline.com/domain&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:tns=&quot;http//way2learnonline.com/domain&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http//way2learnonline.com/domain&quot; version=&quot;1.0&quot;&gt;&#xd;
+&#xd;
+&#xd;
+ &#xd;
+ &lt;xs:element name=&quot;getAllProductsRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence/&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getAllProductsResponse&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;products&quot;&gt;&#xd;
+        		 	 &lt;xs:complexType&gt;&#xd;
+				  		&lt;xs:sequence&gt;&#xd;
+				  			&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+				  		&lt;/xs:sequence&gt;&#xd;
+				  &lt;/xs:complexType&gt;&#xd;
+        		 &lt;/xs:element&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence&gt;&#xd;
+            	&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+            &lt;/xs:sequence&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;products&quot;&gt;&#xd;
+        		 	 &lt;xs:complexType&gt;&#xd;
+				  		&lt;xs:sequence&gt;&#xd;
+				  			&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+				  		&lt;/xs:sequence&gt;&#xd;
+				  &lt;/xs:complexType&gt;&#xd;
+        		 &lt;/xs:element&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductRequest&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+&#xd;
+&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;offer&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element name=&quot;offerPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offerValidUntil&quot; type=&quot;xs:date&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;product&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;brandName&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;description&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+     &lt;xs:element name=&quot;images&quot;&gt;&#xd;
+        		&lt;xs:complexType&gt;&#xd;
+					&lt;xs:sequence&gt;&#xd;
+						&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;image&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+					&lt;/xs:sequence&gt;&#xd;
+				 &lt;/xs:complexType&gt;&#xd;
+         &lt;/xs:element&gt;&#xd;
+  &#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offer&quot; type=&quot;tns:offer&quot;/&gt;&#xd;
+      &lt;xs:element name=&quot;originalPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;productId&quot; type=&quot;xs:long&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+  &#xd;
+  		 &#xd;
+ &#xd;
+&lt;/xs:schema&gt;</string>
+          </schemas>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+          <baseUri>http://localhost:6060/soap/ws/products.wsdl</baseUri>
+        </schemas>
+        <namespaceManager>
+          <namespacePrefix>
+            <entry>
+              <string>http//way2learnonline.com/domain</string>
+              <string>ns0</string>
+            </entry>
+          </namespacePrefix>
+        </namespaceManager>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>getProductsByNameResponse</id>
+        <displayName>getProductsByNameResponse</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey">
+                <id>getProductsByNameResponse</id>
+                <displayName>getProductsByNameResponse</displayName>
+                <category>DEFAULT</category>
+                <metaDataKeyPropertiesManager>
+                  <properties>
+                    <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+                  </properties>
+                </metaDataKeyPropertiesManager>
+              </metaDataKey>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>products</name>
+            <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+              <dataType>XML</dataType>
+              <metaDataModelPropertiesManager>
+                <properties/>
+              </metaDataModelPropertiesManager>
+              <fields>
+                <org.mule.common.metadata.DefaultMetaDataField>
+                  <name>product</name>
+                  <model class="org.mule.common.metadata.DefaultListMetaDataModel">
+                    <dataType>LIST</dataType>
+                    <metaDataModelPropertiesManager>
+                      <properties>
+                        <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                          <typeQName>
+                            <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                            <localPart>product</localPart>
+                            <prefix></prefix>
+                          </typeQName>
+                        </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        <org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                          <maxOccurs>2147483647</maxOccurs>
+                          <minOccurs>1</minOccurs>
+                        </org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                      </properties>
+                    </metaDataModelPropertiesManager>
+                    <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                      <dataType>XML</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties/>
+                      </metaDataModelPropertiesManager>
+                      <fields>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>brandName</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>STRING</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>brandName</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>description</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>STRING</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>description</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>images</name>
+                          <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                            <dataType>XML</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties/>
+                            </metaDataModelPropertiesManager>
+                            <fields>
+                              <org.mule.common.metadata.DefaultMetaDataField>
+                                <name>image</name>
+                                <model class="org.mule.common.metadata.DefaultListMetaDataModel">
+                                  <dataType>LIST</dataType>
+                                  <metaDataModelPropertiesManager>
+                                    <properties>
+                                      <org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                                        <maxOccurs>2147483647</maxOccurs>
+                                        <minOccurs>0</minOccurs>
+                                      </org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                                      <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                        <typeQName reference="../../../../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                      </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                    </properties>
+                                  </metaDataModelPropertiesManager>
+                                  <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                                    <dataType>STRING</dataType>
+                                    <metaDataModelPropertiesManager>
+                                      <properties/>
+                                    </metaDataModelPropertiesManager>
+                                  </model>
+                                  <isArray>false</isArray>
+                                </model>
+                                <accessType>READ_WRITE</accessType>
+                                <metaDataFieldPropertyManager>
+                                  <properties>
+                                    <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                      <name>
+                                        <namespaceURI></namespaceURI>
+                                        <localPart>image</localPart>
+                                        <prefix></prefix>
+                                      </name>
+                                    </org.mule.common.metadata.property.QNameMetaDataProperty>
+                                  </properties>
+                                </metaDataFieldPropertyManager>
+                              </org.mule.common.metadata.DefaultMetaDataField>
+                            </fields>
+                            <rootElement>
+                              <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                              <localPart>getProductsByNameResponse</localPart>
+                              <prefix>ns0</prefix>
+                            </rootElement>
+                            <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+                              <schemas>
+                                <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:sch=&quot;http//way2learnonline.com/domain&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:tns=&quot;http//way2learnonline.com/domain&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http//way2learnonline.com/domain&quot; version=&quot;1.0&quot;&gt;&#xd;
+&#xd;
+&#xd;
+ &#xd;
+ &lt;xs:element name=&quot;getAllProductsRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence/&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getAllProductsResponse&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;products&quot;&gt;&#xd;
+        		 	 &lt;xs:complexType&gt;&#xd;
+				  		&lt;xs:sequence&gt;&#xd;
+				  			&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+				  		&lt;/xs:sequence&gt;&#xd;
+				  &lt;/xs:complexType&gt;&#xd;
+        		 &lt;/xs:element&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameRequest&quot;&gt;&#xd;
+        &lt;xs:complexType&gt;&#xd;
+            &lt;xs:sequence&gt;&#xd;
+            	&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+            &lt;/xs:sequence&gt;                &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+     &lt;xs:element name=&quot;getProductsByNameResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;products&quot;&gt;&#xd;
+        		 	 &lt;xs:complexType&gt;&#xd;
+				  		&lt;xs:sequence&gt;&#xd;
+				  			&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+				  		&lt;/xs:sequence&gt;&#xd;
+				  &lt;/xs:complexType&gt;&#xd;
+        		 &lt;/xs:element&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductRequest&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+    &#xd;
+    &lt;xs:element name=&quot;addProductResponse&quot;&gt;&#xd;
+         &lt;xs:complexType&gt;&#xd;
+        	&lt;xs:sequence&gt;&#xd;
+        		 &lt;xs:element name=&quot;product&quot; type=&quot;tns:product&quot;/&gt;&#xd;
+        	&lt;/xs:sequence&gt;                         &#xd;
+        &lt;/xs:complexType&gt;&#xd;
+    &lt;/xs:element&gt;&#xd;
+&#xd;
+&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;offer&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element name=&quot;offerPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offerValidUntil&quot; type=&quot;xs:date&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+&#xd;
+  &lt;xs:complexType name=&quot;product&quot;&gt;&#xd;
+    &lt;xs:sequence&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;brandName&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;description&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+     &lt;xs:element name=&quot;images&quot;&gt;&#xd;
+        		&lt;xs:complexType&gt;&#xd;
+					&lt;xs:sequence&gt;&#xd;
+						&lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;image&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+					&lt;/xs:sequence&gt;&#xd;
+				 &lt;/xs:complexType&gt;&#xd;
+         &lt;/xs:element&gt;&#xd;
+  &#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;offer&quot; type=&quot;tns:offer&quot;/&gt;&#xd;
+      &lt;xs:element name=&quot;originalPrice&quot; type=&quot;xs:double&quot;/&gt;&#xd;
+      &lt;xs:element minOccurs=&quot;0&quot; name=&quot;productId&quot; type=&quot;xs:long&quot;/&gt;&#xd;
+    &lt;/xs:sequence&gt;&#xd;
+  &lt;/xs:complexType&gt;&#xd;
+  &#xd;
+  		 &#xd;
+ &#xd;
+&lt;/xs:schema&gt;</string>
+                              </schemas>
+                              <encoding reference="../../../../../../../../../../../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+                              <baseUri>http://localhost:6060/soap/ws/products.wsdl</baseUri>
+                            </schemas>
+                            <namespaceManager>
+                              <namespacePrefix>
+                                <entry>
+                                  <string>http//way2learnonline.com/domain</string>
+                                  <string>ns0</string>
+                                </entry>
+                              </namespacePrefix>
+                            </namespaceManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>images</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>name</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>STRING</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>name</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>offer</name>
+                          <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                            <dataType>XML</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName>
+                                    <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                                    <localPart>offer</localPart>
+                                    <prefix></prefix>
+                                  </typeQName>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                            <fields>
+                              <org.mule.common.metadata.DefaultMetaDataField>
+                                <name>offerPrice</name>
+                                <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                                  <dataType>DOUBLE</dataType>
+                                  <metaDataModelPropertiesManager>
+                                    <properties>
+                                      <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                        <typeQName reference="../../../../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[5]/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                      </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                    </properties>
+                                  </metaDataModelPropertiesManager>
+                                </model>
+                                <accessType>READ_WRITE</accessType>
+                                <metaDataFieldPropertyManager>
+                                  <properties>
+                                    <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                      <name>
+                                        <namespaceURI></namespaceURI>
+                                        <localPart>offerPrice</localPart>
+                                        <prefix></prefix>
+                                      </name>
+                                    </org.mule.common.metadata.property.QNameMetaDataProperty>
+                                  </properties>
+                                </metaDataFieldPropertyManager>
+                              </org.mule.common.metadata.DefaultMetaDataField>
+                              <org.mule.common.metadata.DefaultMetaDataField>
+                                <name>offerValidUntil</name>
+                                <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                                  <dataType>DATE</dataType>
+                                  <metaDataModelPropertiesManager>
+                                    <properties>
+                                      <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                        <typeQName reference="../../../../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[5]/model/fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                      </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                    </properties>
+                                  </metaDataModelPropertiesManager>
+                                </model>
+                                <accessType>READ_WRITE</accessType>
+                                <metaDataFieldPropertyManager>
+                                  <properties>
+                                    <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                      <name>
+                                        <namespaceURI></namespaceURI>
+                                        <localPart>offerValidUntil</localPart>
+                                        <prefix></prefix>
+                                      </name>
+                                    </org.mule.common.metadata.property.QNameMetaDataProperty>
+                                  </properties>
+                                </metaDataFieldPropertyManager>
+                              </org.mule.common.metadata.DefaultMetaDataField>
+                            </fields>
+                            <rootElement>
+                              <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                              <localPart>getProductsByNameResponse</localPart>
+                              <prefix>ns0</prefix>
+                            </rootElement>
+                            <schemas class="org.mule.common.metadata.StringBasedSchemaProvider" reference="../../../org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas"/>
+                            <namespaceManager reference="../../../org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>offer</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>originalPrice</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>DOUBLE</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[5]/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>originalPrice</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                        <org.mule.common.metadata.DefaultMetaDataField>
+                          <name>productId</name>
+                          <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                            <dataType>LONG</dataType>
+                            <metaDataModelPropertiesManager>
+                              <properties>
+                                <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                                  <typeQName reference="../../../../../../../../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[7]/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                                </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                              </properties>
+                            </metaDataModelPropertiesManager>
+                          </model>
+                          <accessType>READ_WRITE</accessType>
+                          <metaDataFieldPropertyManager>
+                            <properties>
+                              <org.mule.common.metadata.property.QNameMetaDataProperty>
+                                <name>
+                                  <namespaceURI></namespaceURI>
+                                  <localPart>productId</localPart>
+                                  <prefix></prefix>
+                                </name>
+                              </org.mule.common.metadata.property.QNameMetaDataProperty>
+                            </properties>
+                          </metaDataFieldPropertyManager>
+                        </org.mule.common.metadata.DefaultMetaDataField>
+                      </fields>
+                      <rootElement>
+                        <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                        <localPart>getProductsByNameResponse</localPart>
+                        <prefix>ns0</prefix>
+                      </rootElement>
+                      <schemas class="org.mule.common.metadata.StringBasedSchemaProvider" reference="../fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas"/>
+                      <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+                    </model>
+                    <isArray>false</isArray>
+                  </model>
+                  <accessType>READ_WRITE</accessType>
+                  <metaDataFieldPropertyManager>
+                    <properties>
+                      <org.mule.common.metadata.property.QNameMetaDataProperty>
+                        <name>
+                          <namespaceURI></namespaceURI>
+                          <localPart>product</localPart>
+                          <prefix></prefix>
+                        </name>
+                      </org.mule.common.metadata.property.QNameMetaDataProperty>
+                    </properties>
+                  </metaDataFieldPropertyManager>
+                </org.mule.common.metadata.DefaultMetaDataField>
+              </fields>
+              <rootElement>
+                <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+                <localPart>getProductsByNameResponse</localPart>
+                <prefix>ns0</prefix>
+              </rootElement>
+              <schemas class="org.mule.common.metadata.StringBasedSchemaProvider" reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas"/>
+              <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>products</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http//way2learnonline.com/domain</namespaceURI>
+          <localPart>getProductsByNameResponse</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas reference="../../fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/schemas/schemas"/>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+          <baseUri>http://localhost:6060/soap/ws/products.wsdl</baseUri>
+        </schemas>
+        <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField[3]/model/namespaceManager"/>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+  </types>
+  <connectorName>Web_Service_Consumer</connectorName>
+</metadata__catalog__entry>

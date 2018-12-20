@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+    <db:mysql-config name="MySQL_Configuration" host="localhost" port="3306" user="root" password="root" database="muletrainingdb" doc:name="MySQL Configuration"/>
+    <db:template-query name="getproductsbybrandname" doc:name="Template Query">
+        <db:parameterized-query><![CDATA[select * from product where brand_name=:brandname]]></db:parameterized-query>
+    </db:template-query>
+    <flow name="dbdemoFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/db" doc:name="HTTP"/>
+        <db:select config-ref="MySQL_Configuration" doc:name="Database">
+            <db:template-query-ref name="getproductsbybrandname"/>
+            <db:in-param name="brandname" value="#[message.inboundProperties.'http.query.params'.brandname]"/>
+        </db:select>
+        <dw:transform-message metadata:id="b69bdf50-3367-4ce4-82c1-8507dc4561ca" doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+payload map ((payload01 , indexOfPayload01) -> {
+	brandName: payload01.brand_name,
+	description: payload01.description,
+	name: payload01.name,
+	offer: {
+		offerPrice: payload01.offer_price,
+		offerValidUntil: payload01.offer_valid_until 
+	},
+	originalPrice: payload01.original_price,
+	productId: payload01.product_id
+} as :object {
+	class : "com.way2learnonline.Product"
+})]]></dw:set-payload>
+        </dw:transform-message>
+    </flow>
+</mule>

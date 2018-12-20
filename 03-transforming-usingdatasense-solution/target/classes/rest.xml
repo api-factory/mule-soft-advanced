@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
+    <http:request-config name="HTTP_Request_Configuration" host="localhost" port="7070" basePath="/rest" doc:name="HTTP Request Configuration">
+        <http:raml-api-configuration location="productsservice.raml"/>
+    </http:request-config>  
+    <flow name="02-consuming-rest-withraml-solutionFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/products" doc:name="HTTP"/>
+        <http:request config-ref="HTTP_Request_Configuration" path="/products/{productnamecontains}" method="GET" doc:name="HTTP" metadata:id="2489e8a3-85d9-4e9c-81e3-bc6c5bf0652f">
+            <http:request-builder>
+                <http:uri-param paramName="productnamecontains" value="#[message.inboundProperties.'http.query.params'.productname]"/>
+            </http:request-builder>
+        </http:request>
+        <dw:transform-message doc:name="Transform Message" metadata:id="7fed7889-636a-49b4-9dd2-9e5764f472b3">
+            <dw:input-payload/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+payload map ((payload01 , indexOfPayload01) -> {
+	brandName: payload01.brandName,
+	description: payload01.description,
+	images: payload01.images map ((image , indexOfImage) -> image),
+	name: payload01.name,
+	offer: {
+		offerPrice: payload01.offer.offerPrice,
+		offerValidUntil: payload01.offer.offerValidUntil 
+	},
+	originalPrice: payload01.originalPrice,
+	productId: payload01.productId
+} as :object {
+	class : "com.way2learnonline.Product"
+})]]></dw:set-payload>
+        </dw:transform-message>
+    </flow>
+</mule>

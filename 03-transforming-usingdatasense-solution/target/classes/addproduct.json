@@ -1,0 +1,15 @@
+ {
+    "name": "Sony Vaio",
+    "description": "Sony Laptop ",
+    "originalPrice": 10000,
+    "offer": {
+      "offerPrice": 9000,
+      "offerValidUntil": 1466170643234 
+    },
+    "brandName": "SONY",
+    "images": [
+      "image1.jpeg",
+      "image2.jpeg",
+      "image3.jpeg"
+    ]
+  }
