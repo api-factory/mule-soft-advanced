@@ -1,0 +1,15 @@
+git init
+git remote add origin https://github.com/{yourGitHubUsername/{reponame}}.git
+
+git status
+git add –A
+
+git commit -m "Initial commit"
+
+git push origin master
+
+Jenkins URL
+
+H/2 ****
+http://adv.mulesoft-training.com/
+

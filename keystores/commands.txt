@@ -1,0 +1,26 @@
+keytool -genkey -keystore serverkeystore.jks -alias server -keyalg RSA
+
+Give store password as serverstore
+
+alias password as server
+
+keytool -genkey -keystore clientkeystore.jks -alias client -keyalg RSA
+
+Give store password as clientstore
+
+alias password as client
+
+
+keytool -exportcert -file clientcert.cer -keystore clientkeystore.jks -alias client
+
+keytool -exportcert -file servercert.cer -keystore serverkeystore.jks -alias server
+
+
+keytool -import -keystore servertruststore.jks -file clientcert.cer
+
+Give store password as serverstore
+
+keytool -import -keystore clienttruststore.jks -file servercert.cer
+
+Give store password as serverstore
+
